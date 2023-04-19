@@ -18,15 +18,24 @@
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
+  <div class="content-wrapper">
 
-  <!-- Preloader -->
-  <!-- <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__wobble" src="{{asset('assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
-  </div> -->
-
-@include('includes/admin/header')
+    <!-- Preloader -->
+    <!-- <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__wobble" src="{{asset('assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
+    </div> -->
+    
+    @include('includes/admin/header')
+    <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
 
 @yield('content')
+</div>
 @include('includes/admin/footer')
   <!-- Main Footer -->
   
@@ -82,6 +91,9 @@
   		toastr.error("{{ session('error') }}");
   @endif
   </script>
+@yield('scripts')
+
+  
 </body>
 </html>
 
