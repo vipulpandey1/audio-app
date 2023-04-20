@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\SubCategory;
 use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
 
 
 
@@ -38,14 +39,14 @@ class ProductController extends Controller
 
     public function removeProduct($id){
         $category = Product::find($id);
-        $desk_path =  "public/desktop-image".$category->desktop_image;
+        $desk_path =  "public/product/desktop-image".$category->desktop_image;
         Storage::delete($desk_path);
 
-        $mob_path =  "public/mobile-image".$category->mobile_image;
+        $mob_path =  "public/product/mobile-image".$category->mobile_image;
         Storage::delete($mob_path);
 
         if($category->delete()){
-            return redirect()->route('product')->with("message","SubCategory deleted successfully");
+            return redirect()->route('product')->with("message","Product deleted successfully");
         }
 
     }
@@ -80,7 +81,7 @@ class ProductController extends Controller
 
         $category = Product::updateOrCreate(["id"=>$req->id],$data);
         if($category){
-            return redirect()->route('product')->with("message","SubCategory inserted successfully");
+            return redirect()->route('product')->with("message","Product inserted successfully");
         }
 
     }
