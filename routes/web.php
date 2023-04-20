@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\subCatController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\LoginController;
 
@@ -44,6 +45,14 @@ Route::prefix('admin')->middleware(['is_admin:user'])->group(function(){
         Route::post('/category-save','saveCategory')->name('saveCategory');
         Route::get('/category-edit/{id}','editView')->name('editView');
         Route::get('/category-remove/{id}','removeCategory')->name('removeCategory');
+    });
+
+    Route::controller(SubcatController::class)->group(function(){
+        Route::get('/subcategory','index')->name('subcategory');
+         Route::get('/subcategory-add','addView')->name('addViewsub');
+         Route::post('/subcategory-save','savesubCategory')->name('saveCategorysub');
+         Route::get('/subcategory-edit/{id}','editView')->name('editViewsub');
+         Route::get('/subcategory-remove/{id}','removesubCategory')->name('removesubCategory');
     });
 
     Route::controller(SliderController::class)->group(function(){
