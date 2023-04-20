@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +21,21 @@ use App\Http\Controllers\Admin\SliderController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::controller(LoginController::class)->group(function(){
+    Route::get('/login','login')->name('login');
+    
+    Route::post('/login-user','loginUser')->name('loginUser');
+    Route::get('/logout','logoutUser')->name('logoutUser');
 
-Route::prefix('admin')->group(function(){
+});
+
+
+Route::prefix('admin')->middleware(['is_admin:user'])->group(function(){
     Route::controller(DashboardController::class)->group(function(){
         Route::get('/dashboard','dashboard')->name('dashboard');
+      
+
+        
     });
 
     Route::controller(CategoryController::class)->group(function(){

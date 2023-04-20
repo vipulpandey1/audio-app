@@ -143,7 +143,17 @@
               </p>
             </a>
           </li>
-        
+
+          <li class="nav-item">
+            <a href="{{ route('logoutUser') }}" class="nav-link {{ request()->routeIs('logoutUser') ? 'active' : '' }} ">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+              Logout
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+          
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
