@@ -133,7 +133,15 @@
               </p>
             </a>
           </li>
-
+          <li class="nav-item">
+            <a href="{{ route('subcategory') }}" class="nav-link {{ request()->routeIs('subcategory','addViewsub','editViewsub') ? 'active' : '' }} ">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Sub Category
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="{{ route('slider') }}" class="nav-link {{ request()->routeIs('slider') ? 'active' : '' }} ">
               <i class="nav-icon fas fa-th"></i>
@@ -143,6 +151,17 @@
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{ route('product') }}" class="nav-link {{ request()->routeIs('product','productAdd','productEdit') ? 'active' : '' }} ">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Product
+                <!-- <span class="right badge badge-danger">New</span> -->
+              </p>
+            </a>
+          </li>
+
 
           <li class="nav-item">
             <a href="{{ route('logoutUser') }}" class="nav-link {{ request()->routeIs('logoutUser') ? 'active' : '' }} ">

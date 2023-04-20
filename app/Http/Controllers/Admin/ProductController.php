@@ -4,34 +4,40 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
 use App\Models\SubCategory;
 use App\Models\Category;
 
-use Illuminate\Support\Facades\Storage;
 
-class SubcatController extends Controller
+
+class ProductController extends Controller
 {
     public function index(){
-        $subcategory = SubCategory::paginate(20);
-        return view('admin.subcategory.index',compact('subcategory'));
+        $subcategory = Product::paginate(20);
+        return view('admin.product.index',compact('subcategory'));
     }
 
-    public function addView(){
+    public function productAdd(){
         $category = Category::all();
-        return view('admin.subcategory.add',compact('category'));
-
+        return view('admin.product.add',compact('category'));
     }
 
-    public function editView($id){
-        $subcategory = SubCategory::with('categories')->find($id);
+    public function getSubCateById(Request $req){
+        $subcate = Category::with('subCate')->find($req->id);
+        return response()->json($subcate);
+    }
+
+
+    public function productEdit($id){
+        $subcategory = Product::with('category','subCategory')->find($id);
         $category = Category::all();
-
-        return view('admin.subcategory.edit',compact('subcategory','category'));
+        $subCate = SubCategory::all();
+        return view('admin.product.edit',compact('subcategory','category','subCate'));
 
     }
 
-    public function removesubCategory($id){
-        $category = SubCategory::find($id);
+    public function removeProduct($id){
+        $category = Product::find($id);
         $desk_path =  "public/desktop-image".$category->desktop_image;
         Storage::delete($desk_path);
 
@@ -39,13 +45,13 @@ class SubcatController extends Controller
         Storage::delete($mob_path);
 
         if($category->delete()){
-            return redirect()->route('subcategory')->with("message","SubCategory deleted successfully");
+            return redirect()->route('product')->with("message","SubCategory deleted successfully");
         }
 
     }
 
 
-    public function savesubCategory(Request $req){
+    public function saveProduct(Request $req){
         $data = $req->all();
 
         if(!empty($req->desktop_image)){
@@ -56,7 +62,7 @@ class SubcatController extends Controller
             
             // Add timestamp hash to name of the file
             $filename .= "_" . md5(time()) . "." . $extension;
-            $file_path =  $image->storeAs('public/desktop-image', $filename);
+            $file_path =  $image->storeAs('public/product/desktop-image', $filename);
             $data['desktop_image'] = $filename;   
         }
 
@@ -68,13 +74,13 @@ class SubcatController extends Controller
             
             // Add timestamp hash to name of the file
             $filename .= "_" . md5(time()) . "." . $extension;
-            $file_path =  $image->storeAs('public/mobile-image', $filename);
+            $file_path =  $image->storeAs('public/product/mobile-image', $filename);
             $data['mobile_image'] = $filename;   
         }
 
-        $category = SubCategory::updateOrCreate(["id"=>$req->id],$data);
+        $category = Product::updateOrCreate(["id"=>$req->id],$data);
         if($category){
-            return redirect()->route('subcategory')->with("message","SubCategory inserted successfully");
+            return redirect()->route('product')->with("message","SubCategory inserted successfully");
         }
 
     }

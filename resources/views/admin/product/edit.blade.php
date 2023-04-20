@@ -7,9 +7,9 @@
       <div class="container-fluid">
       <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Sub Category</h3>
+                <h3 class="card-title">Edit Product</h3>
               </div>
-      <form method="post" action="{{ route('saveCategorysub') }}" enctype="multipart/form-data" id="subCategory">
+      <form method="post" action="{{ route('saveProduct') }}" enctype="multipart/form-data" id="subCategory">
         @csrf
         <input type="hidden" name="id" value="{{ $subcategory->id }}">
         <div class="card-body">
@@ -27,13 +27,26 @@
             </div>
             <div class="form-group" id="categoryDiv">
                 <label for="exampleInputPassword1">Category</label>
-                <select name="category_id" class="form-control" id="category" >
+                <select name="category_id" class="form-control" id="category" data-url="{{ route('getSubCateById') }}" onchange="dependentDropdown(event,'sub_category_id')">
                     <option value=""> Please select</option>
                     @foreach ($category as $val)
                     
                     <option value="{{ $val->id }}" {{ $subcategory->category_id == $val->id ? "selected" :""}}>{{ $val->name }}</option>
                     @endforeach
                         
+                </select>
+            </div>
+
+            <div class="form-group" >
+                <label for="exampleInputPassword1">Sub Category</label>
+                <select name="sub_category_id" class="form-control" id="sub_category_id" >
+                    <option value=""> Please select</option>
+                    @foreach ($subCate as $val)
+                    
+                    <option value="{{ $val->id }}" {{ $subcategory->sub_category_id == $val->id ? "selected" :""}}>{{ $val->name }}({{ $val->id }}) </option>
+                    @endforeach
+
+                   
                 </select>
             </div>
 
@@ -73,7 +86,7 @@
                     <div class="card">
                         <div class="card-header">Desktop Image</div>
                         <div class="card-body">
-                            <img src="{{ asset('/storage/desktop-image').'/'.$subcategory->desktop_image }}" alt="" class="img-fluid">
+                            <img src="{{ asset('/storage/product/desktop-image').'/'.$subcategory->desktop_image }}" alt="" class="img-fluid">
                         </div>
 
                     </div>
@@ -83,7 +96,7 @@
                     <div class="card">
                         <div class="card-header">Mobile Image</div>
                         <div class="card-body">
-                            <img src="{{ asset('/storage/mobile-image').'/'.$subcategory->mobile_image }}" alt="" class="img-fluid">
+                            <img src="{{ asset('/storage/product/mobile-image').'/'.$subcategory->mobile_image }}" alt="" class="img-fluid">
                         </div>
 
                     </div>

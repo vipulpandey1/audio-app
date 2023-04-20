@@ -24,8 +24,8 @@
           <div class="col-md-12">
       <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Sub Category List</h3>
-                <a href="{{ route('addViewsub') }}" class="btn btn-primary float-right" title ="Add Sub Category">Add Sub Category </a>
+                <h3 class="card-title">Product List</h3>
+                <a href="{{ route('productAdd') }}" class="btn btn-primary float-right" title ="Add Product">Add Product </a>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
@@ -47,8 +47,8 @@
                       <td>{{ $category->title }}</td>
 
                       <td>
-                        <a href="{{ route('editViewsub',$category->id) }}" class="btn btn-info" title="Edit">Edit</a>
-                        <a href="{{ route('removesubCategory',$category->id) }}" class="btn btn-danger" title="Delete">Delete</a>
+                        <a href="{{ route('productEdit',$category->id) }}" class="btn btn-info" title="Edit">Edit</a>
+                        <a href="{{ route('removeProduct',$category->id) }}" class="btn btn-danger" title="Delete">Delete</a>
 
                       </td>
                     </tr>

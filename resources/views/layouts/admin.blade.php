@@ -68,6 +68,8 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('assets/dist/js/pages/dashboard2.js')}}"></script>
 <script src="{{asset('assets/js/bs4-toast.js')}}"></script>
+<script src="{{asset('assets/js/custom.js')}}"></script>
+
 
 
 

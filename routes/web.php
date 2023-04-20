@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\subCatController;
+use App\Http\Controllers\Admin\SubcatController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\ProductController;
+
 use App\Http\Controllers\LoginController;
 
 
@@ -53,15 +55,31 @@ Route::prefix('admin')->middleware(['is_admin:user'])->group(function(){
          Route::post('/subcategory-save','savesubCategory')->name('saveCategorysub');
          Route::get('/subcategory-edit/{id}','editView')->name('editViewsub');
          Route::get('/subcategory-remove/{id}','removesubCategory')->name('removesubCategory');
+
+         
     });
+
+
+
+    Route::controller(ProductController::class)->group(function(){
+        Route::get('/product','index')->name('product');
+         Route::get('/product-add','productAdd')->name('productAdd');
+         Route::post('/product-save','saveProduct')->name('saveProduct');
+         Route::get('/product-edit/{id}','productEdit')->name('productEdit');
+         Route::get('/product-remove/{id}','removeProduct')->name('removeProduct');
+         Route::get('/get-subcategory-id','getSubCateById')->name('getSubCateById');
+
+    });
+
+
 
     Route::controller(SliderController::class)->group(function(){
         Route::get('/slider','index')->name('slider');
         Route::post('/slider-save','addSliderImage')->name('addSliderImage');
         Route::get('/slider-remove/{id}','removeSlider')->name('removeSlider');
+    });
 
         
-    });
 
 
 

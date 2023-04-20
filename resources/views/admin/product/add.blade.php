@@ -6,9 +6,9 @@
       <div class="container-fluid">
       <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add Sub Category</h3>
+                <h3 class="card-title">Add Product</h3>
               </div>
-      <form method="post" action="{{ route('saveCategorysub') }}" enctype="multipart/form-data" id="subCategory">
+      <form method="post" action="{{ route('saveProduct') }}" enctype="multipart/form-data" id="subCategory">
         @csrf
         <div class="card-body">
             <div class="form-group">
@@ -26,7 +26,7 @@
 
             <div class="form-group" id="categoryDiv">
                 <label for="exampleInputPassword1">Category</label>
-                <select name="category_id" class="form-control" id="category" >
+                <select name="category_id" class="form-control" id="category" data-url="{{ route('getSubCateById') }}" onchange="dependentDropdown(event,'sub_category_id')">
                     <option value=""> Please select</option>
                     @foreach ($category as $val)
                     
@@ -35,6 +35,15 @@
                         
                 </select>
             </div>
+
+            <div class="form-group" >
+                <label for="exampleInputPassword1">Sub Category</label>
+                <select name="sub_category_id" class="form-control" id="sub_category_id" >
+                    <option value=""> Please select</option>
+                   
+                </select>
+            </div>
+
 
             <div class="form-group">
             <label for="exampleInputPassword1">Description</label>
