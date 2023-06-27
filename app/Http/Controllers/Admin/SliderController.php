@@ -18,12 +18,16 @@ class SliderController extends Controller
 
     public function addSliderImage(Request $req){
        $data = $req->all();
-       $path = 'public/slider/';
+       $path = 'uploads/slider/';
+       $pathMob = 'uploads/slider/mobile';
+        
+          
        
        if($req->type == 2 && !empty($req->category)){
         $data['category_id'] = $req->category;
         
-        $path = 'public/slider/category/'.$req->category;
+        $path = 'uploads/slider/category/'.$req->category;
+        $pathMob = 'uploads/slider/category/mobile/'.$req->category;
        }else{
         $data['category_id'] = null;
        }
@@ -31,12 +35,34 @@ class SliderController extends Controller
            $image = $req->file('file');
            $extension = $image->getClientOriginalExtension();
            $filename = str_replace(".".$extension, "", $image->getClientOriginalName()); // Filename without extension
-           // Add timestamp hash to name of the file
+        //   // Add timestamp hash to name of the file
            $filename .= "_" . md5(time()) . "." . $extension;
-           $file_path =  $image->storeAs($path, $filename);
-           $data['image'] = $filename;   
+        //   $file_path =  $image->storeAs($path, $filename);
+           $image->move(public_path($path),$filename);
+           $data['image'] = $filename;  
+      
+       // $imgname= time().'.'.$image->extension();
+        
+        //$data['image'] = $imgname;
+        
 
         }
+
+        if(!empty($req->mobile_image)){
+            $image = $req->file('mobile_image');
+            $extension = $image->getClientOriginalExtension();
+            $filename = str_replace(".".$extension, "", $image->getClientOriginalName()); // Filename without extension
+            // // Add timestamp hash to name of the file
+            $filename .= "_" . md5(time()) . "." . $extension;
+            // $file_path =  $image->storeAs($pathMob, $filename);
+            // $data['mobile_image'] = $filename;  
+            // $imgname= time().'.'.$image->extension();
+            $image->move(public_path($pathMob),$filename);
+            $data['mobile_image'] = $filename;
+ 
+         }
+
+        
 
         $result = Slider::create($data);
         if($result){

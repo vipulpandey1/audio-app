@@ -1,21 +1,37 @@
-@extends('layouts/admin')
-<div class="content-wrapper">
+@extends('layouts.admin')
+@section('content')
+<style>
+  .dataTables_length{
+         padding:1rem;
+     }
+     .dataTables_length  label {
+      display:flex;
 
-<section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <!-- <h1>Simple Tables</h1> -->
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"></li>
-              <li class="breadcrumb-item active"></li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+     }
+     .dataTables_length select{
+      width:100%;
+      max-width:200px;
+      margin:0px 1rem
+     }
+     .dataTables_filter{
+      display:flex;
+      justify-content:end;
+      margin-right:1rem;
+     }
+     .btn1{
+      border:1px solid grey; 
+      padding:0.5rem
+     }
+     .dataTables_info{
+       padding:0.5rem
+     }
+     .dataTables_paginate{
+      display:flex;
+      justify-content:end;
+      margin-right:1rem;
+     }
+</style>
+
 
     <!-- Main content -->
     <section class="content">
@@ -29,13 +45,14 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table class="table table-striped">
+              <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4" style="margin:auto;padding:0rem 0px;">
+                <table class="table table-striped" id="example1">
                   <thead>
                     <tr>
                       <th >#</th>
                       <th>Name</th>
                       <th>Title</th>
-
+                      <th>Status</th>
                       <th >Action</th>
                     </tr>
                   </thead>
@@ -45,10 +62,17 @@
                       <td>{{ $key + 1}}</td>
                       <td>{{ $category->name }}</td>
                       <td>{{ $category->title }}</td>
-
                       <td>
-                        <a href="{{ route('editViewsub',$category->id) }}" class="btn btn-info" title="Edit">Edit</a>
-                        <a href="{{ route('removesubCategory',$category->id) }}" class="btn btn-danger" title="Delete">Delete</a>
+                        <div class="form-group">
+                          <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input toggle-button" data-url="{{ route('changeStatus') }}" id="customSwitch1-{{$key}}" data-id="{{$category->id}}" {{ $category->status == 1 ? "CHECKED" : ""}} name="status">
+                            <label class="custom-control-label" for="customSwitch1-{{$key}}"></label>
+                          </div>
+                        </div>
+                      </td>
+                      <td style="display:flex">
+                        <a href="{{ route('editViewsub',$category->id) }}" title="Edit" class="btn1"><i class="fa fa-edit"></i></a>
+                        <a href="{{ route('removesubCategory',$category->id) }}" class="btn1" style="color:red" title="Delete"><i class="fa fa-trash"></i></a>
 
                       </td>
                     </tr>
@@ -56,6 +80,7 @@
                    
                   </tbody>
                 </table>
+              </div>
               </div>
               <!-- /.card-body -->
             </div>
@@ -67,5 +92,4 @@
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+    @endsection

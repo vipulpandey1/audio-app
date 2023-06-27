@@ -1,6 +1,36 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+   .dataTables_length{
+         padding:1rem;
+     }
+     .dataTables_length  label {
+      display:flex;
 
+     }
+     .dataTables_length select{
+      width:100%;
+      max-width:200px;
+      margin:0px 1rem
+     }
+     .dataTables_filter{
+      display:flex;
+      justify-content:end;
+      margin-right:1rem;
+     }
+     .btn1{
+      border:1px solid grey; 
+      padding:0.5rem
+     }
+     .dataTables_info{
+       padding:0.5rem
+     }
+     .dataTables_paginate{
+      display:flex;
+      justify-content:end;
+      margin-right:1rem;
+     }
+</style>
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -13,7 +43,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
-                <table class="table table-striped">
+                <table class="table table-striped" id="example1">
                   <thead>
                     <tr>
                       <th >#</th>
@@ -31,8 +61,8 @@
                       <td>{{ $category->title }}</td>
 
                       <td>
-                        <a href="{{ route('editView',$category->id) }}" class="btn btn-info" title="Edit">Edit</a>
-                        <a href="{{ route('removeCategory',$category->id) }}" class="btn btn-danger" title="Delete">Delete</a>
+                        <a href="{{ route('editView',$category->id) }}" class="btn1" title="Edit"><i class="fa fa-edit"></i></a>
+                        <a href="{{ route('removeCategory',$category->id) }}" class="btn1" style="color:red;" title="Delete"><i class="fa fa-trash"></i></a>
 
                       </td>
                     </tr>

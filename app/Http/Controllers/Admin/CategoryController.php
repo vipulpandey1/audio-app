@@ -51,7 +51,8 @@ class CategoryController extends Controller
             
             // Add timestamp hash to name of the file
             $filename .= "_" . md5(time()) . "." . $extension;
-            $file_path =  $image->storeAs('public/desktop-image', $filename);
+            //$file_path =  $image->storeAs('public/desktop-image', $filename);
+            $image->move(public_path('uploads/desktop-image'),$filename);
             $data['desktop_image'] = $filename;   
         }
 
@@ -63,7 +64,8 @@ class CategoryController extends Controller
             
             // Add timestamp hash to name of the file
             $filename .= "_" . md5(time()) . "." . $extension;
-            $file_path =  $image->storeAs('public/mobile-image', $filename);
+            //$file_path =  $image->storeAs('public/mobile-image', $filename);
+            $image->move(public_path('uploads/mobile-image'),$filename);
             $data['mobile_image'] = $filename;   
         }
 

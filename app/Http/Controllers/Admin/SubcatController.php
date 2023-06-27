@@ -56,7 +56,7 @@ class SubcatController extends Controller
             
             // Add timestamp hash to name of the file
             $filename .= "_" . md5(time()) . "." . $extension;
-            $file_path =  $image->storeAs('public/desktop-image', $filename);
+            $file_path =  $image->move(public_path('uploads/desktop-image'), $filename);
             $data['desktop_image'] = $filename;   
         }
 
@@ -68,7 +68,8 @@ class SubcatController extends Controller
             
             // Add timestamp hash to name of the file
             $filename .= "_" . md5(time()) . "." . $extension;
-            $file_path =  $image->storeAs('public/mobile-image', $filename);
+            //$file_path =  $image->storeAs('public/mobile-image', $filename);
+            $image->move(public_path('uploads/mobile-image'),$filename);
             $data['mobile_image'] = $filename;   
         }
 
@@ -77,5 +78,12 @@ class SubcatController extends Controller
             return redirect()->route('subcategory')->with("message","SubCategory inserted successfully");
         }
 
+    }
+
+    public function changeStatus(Request $req){
+        $sub = SubCategory::find($req->id);
+        $sub->update(["status"=>$req->status]);
+  
+        return response()->json(["status"=>200]);
     }
 }

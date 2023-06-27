@@ -15,4 +15,12 @@ class Category extends Model
         return $this->hasMany(SubCategory::class);
     }
 
+    public function product(){
+        return $this->hasMany(Product::class,'category_id');
+    }
+
+    public function slider(){
+        return $this->hasMany(Slider::class,'category_id');
+    }
+
 }

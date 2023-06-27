@@ -21,6 +21,8 @@ return [
         'scheme' => 'https',
     ],
 
+   
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
@@ -30,5 +32,19 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+
+    'facebook' => [
+        'client_id' => '',
+        'client_secret' => '',
+        'redirect' => '/facebook/callback',
+    ],
+
+
+    'google' => [
+        'client_id' => '576945985570-q222nco7d22r84l8nkc13k463hkn3dq8.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => '/authorized/google/callback',
+    ],
+
 
 ];

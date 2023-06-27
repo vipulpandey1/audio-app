@@ -11,13 +11,15 @@
       <form method="post" action="{{ route('saveCategorysub') }}" enctype="multipart/form-data" id="subCategory">
         @csrf
         <div class="card-body">
-            <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="Enter Name">
-            </div>
-            <div class="form-group">
-            <label for="exampleInputPassword1">Title</label>
-            <input type="text" name="title" class="form-control" id="exampleInputPassword1" placeholder="Enter Title">
+            <div class="row">
+                <div class="form-group col-md-6">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="Enter Name">
+                </div>
+                <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Title</label>
+                <input type="text" name="title" class="form-control" id="exampleInputPassword1" placeholder="Enter Title">
+                </div>
             </div>
             <div class="form-group">
             <label for="exampleInputPassword1">Meta</label>
@@ -38,9 +40,10 @@
 
             <div class="form-group">
             <label for="exampleInputPassword1">Description</label>
-            <textarea  class="form-control" name="description" id="exampleInputPassword1" placeholder="Enter Description"></textarea>
+            <textarea  class="form-control" name="matter1" id="exampleInputPassword1" placeholder="Enter Description"></textarea>
             </div>
-            <div class="form-group">
+            <div class="row">
+            <div class="form-group col-md-6">
                 <label for="desktop_image">Desktop Image</label>
                 <div class="input-group">
                     <div class="custom-file">
@@ -53,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group col-md-6">
                 <label for="mobile_image">Mobile Image</label>
                 <div class="input-group">
                     <div class="custom-file">
@@ -65,6 +68,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
             <!-- /.card-body -->
 

@@ -1,0 +1,408 @@
+
+
+/* Blue Theme */
+
+html.blue-theme .top-header{
+    background-color: #6610f2;
+}
+
+html.blue-theme .top-header .primary-menu .navbar-nav a.nav-link:hover,
+html.blue-theme .top-header .primary-menu .navbar-nav a.nav-link:focus,
+html.blue-theme .top-header .primary-menu .nav-link.active,
+html.blue-theme .top-header .primary-menu .show>.nav-link {
+  background-color: #6610f2;
+}
+
+html.blue-theme .top-header .primary-menu .dropdown-menu .dropdown-item.active, html.blue-theme .top-header .primary-menu .dropdown-menu .dropdown-item:active {
+	
+	background-color: #6610f2
+}
+
+
+html.blue-theme .vedio-share .social-link a:hover {
+   
+    background-color: #6610f2;
+  }
+  
+  html.blue-theme .footer-section .widget-link li a:hover {
+    color: #6610f2;
+  }
+
+  html.blue-theme .footer-widget-9 .social-link a:hover {
+    
+    background-color: #6610f2;
+  }
+
+
+html.blue-theme .buzz-categories .buzz-menu .list-group-item.active{
+  background-color: #6610f2;
+  border-color: #6610f2;
+}
+
+
+html.blue-theme .bg-theme {
+    background-color: #6610f2 !important;
+  }
+  
+  html.blue-theme .text-theme {
+    color: #6610f2;
+  }
+
+
+  html.blue-theme .btn-theme {
+    
+    background-color: #6610f2;
+    border-color: #6610f2;
+  }
+
+  html.blue-theme .btn-theme:hover {
+   
+    background-color: #600de6;
+    border-color: #600de6;
+  }
+
+  html.blue-theme .btn-check:focus + .btn-theme, html.blue-theme .btn-theme:focus {
+    
+    background-color: #600de6;
+    border-color: #600de6;
+    box-shadow: 0 0 0 0.25rem rgba(96, 13, 230, 0.5);
+  }
+
+  html.blue-theme .btn-check:checked + .btn-theme, html.blue-theme .btn-check:active + .btn-theme, html.blue-theme .btn-theme:active, html.blue-theme .btn-theme.active, html.blue-theme .show > .btn-theme.dropdown-toggle {
+    
+    background-color: #600de6;
+    border-color: #600de6;
+  }
+
+  html.blue-theme .btn-check:checked + .btn-theme:focus, html.blue-theme .btn-check:active + .btn-theme:focus, html.blue-theme .btn-theme:active:focus, html.blue-theme .btn-theme.active:focus, html.blue-theme .show > .btn-theme.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgba(96, 13, 230, 0.5);
+  }
+
+  html.blue-theme .btn-theme:disabled, html.blue-theme .btn-theme.disabled {
+    background-color: #6610f2;
+    border-color: #6610f2;
+  }
+
+
+  
+html.blue-theme .back-to-top {   
+  background-color: #6610f2;
+}
+
+@media all and (min-width: 1200px) { 
+
+html.blue-theme .top-header .primary-menu .navbar-nav a.nav-link:hover,
+html.blue-theme .top-header .primary-menu .navbar-nav a.nav-link:focus,
+html.blue-theme .top-header .primary-menu .nav-link.active,
+html.blue-theme .top-header .primary-menu .show>.nav-link {
+  background-color: #580ad7;
+}
+
+}
+
+
+
+
+
+
+/* Purple Theme */
+
+html.purple-theme .top-header{
+    background-color: #9c27b0;
+}
+
+html.purple-theme .top-header .primary-menu .navbar-nav a.nav-link:hover,
+html.purple-theme .top-header .primary-menu .navbar-nav a.nav-link:focus,
+html.purple-theme .top-header .primary-menu .nav-link.active,
+html.purple-theme .top-header .primary-menu .show>.nav-link {
+  background-color: #9c27b0;
+}
+
+html.purple-theme .top-header .primary-menu .dropdown-menu .dropdown-item.active, html.blue-theme .top-header .primary-menu .dropdown-menu .dropdown-item:active {
+	
+	background-color: #9c27b0
+}
+
+
+html.purple-theme .vedio-share .social-link a:hover {
+   
+    background-color: #9c27b0;
+  }
+  
+  html.purple-theme .footer-section .widget-link li a:hover {
+    color: #9c27b0;
+  }
+
+  html.purple-theme .footer-widget-9 .social-link a:hover {
+    
+    background-color: #9c27b0;
+  }
+
+
+html.purple-theme .buzz-categories .buzz-menu .list-group-item.active{
+  background-color: #9c27b0;
+  border-color: #9c27b0;
+}
+
+
+html.purple-theme .bg-theme {
+    background-color: #9c27b0 !important;
+  }
+  
+  html.purple-theme .text-theme {
+    color: #9c27b0;
+  }
+
+  html.purple-theme .btn-theme {
+    background-color: #9c27b0;
+    border-color: #9c27b0;
+  }
+
+  html.purple-theme .btn-theme:hover {
+   
+    background-color: #851c97;
+    border-color: #851c97;
+  }
+
+  html.purple-theme .btn-check:focus + .btn-theme, html.purple-theme .btn-theme:focus {
+    
+    background-color: #851c97;
+    border-color: #851c97;
+    box-shadow: 0 0 0 0.25rem rgba(155, 39, 176, 0.5);
+  }
+
+  html.purple-theme .btn-check:checked + .btn-theme, html.purple-theme .btn-check:active + .btn-theme, html.purple-theme .btn-theme:active, html.purple-theme .btn-theme.active, .show > .btn-theme.dropdown-toggle {
+    
+    background-color: #851c97;
+    border-color: #851c97;
+  }
+
+  html.purple-theme .btn-check:checked + .btn-theme:focus, html.purple-theme .btn-check:active + .btn-theme:focus, html.purple-theme .btn-theme:active:focus, html.purple-theme .btn-theme.active:focus, .show > .btn-theme.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgba(155, 39, 176, 0.5);
+  }
+
+  html.purple-theme .btn-theme:disabled, html.purple-theme .btn-theme.disabled {
+    background-color: #9c27b0;
+    border-color: #9c27b0;
+  }
+
+    
+html.purple-theme .back-to-top {   
+  background-color: #9c27b0;
+}
+
+@media all and (min-width: 1200px) { 
+
+html.purple-theme .top-header .primary-menu .navbar-nav a.nav-link:hover,
+html.purple-theme .top-header .primary-menu .navbar-nav a.nav-link:focus,
+html.purple-theme .top-header .primary-menu .nav-link.active,
+html.purple-theme .top-header .primary-menu .show>.nav-link {
+  background-color: #851c97;
+}
+
+}
+
+
+
+
+
+/* Green Theme */
+
+html.green-theme .top-header{
+    background-color: #09a257;
+}
+
+html.green-theme .top-header .primary-menu .navbar-nav a.nav-link:hover,
+html.green-theme .top-header .primary-menu .navbar-nav a.nav-link:focus,
+html.green-theme .top-header .primary-menu .nav-link.active,
+html.green-theme .top-header .primary-menu .show>.nav-link {
+  background-color: #09a257;
+}
+
+html.green-theme .top-header .primary-menu .dropdown-menu .dropdown-item.active, html.blue-theme .top-header .primary-menu .dropdown-menu .dropdown-item:active {
+	
+	background-color: #09a257
+}
+
+
+html.green-theme .vedio-share .social-link a:hover {
+   
+    background-color: #09a257;
+  }
+  
+  html.green-theme .footer-section .widget-link li a:hover {
+    color: #09a257;
+  }
+
+  html.green-theme .footer-widget-9 .social-link a:hover {
+    
+    background-color: #09a257;
+  }
+
+
+html.green-theme .buzz-categories .buzz-menu .list-group-item.active{
+  background-color: #09a257;
+  border-color: #09a257;
+}
+
+
+html.green-theme .bg-theme {
+    background-color: #09a257 !important;
+  }
+  
+  html.green-theme .text-theme {
+    color: #09a257;
+  }
+
+  html.green-theme .btn-theme {
+    background-color: #09a257;
+    border-color: #09a257;
+  }
+
+  html.green-theme .btn-theme:hover {
+   
+    background-color: #068b4b;
+    border-color: #068b4b;
+  }
+
+  html.green-theme .btn-check:focus + .btn-theme, html.green-theme .btn-theme:focus {
+    
+    background-color: #068b4b;
+    border-color: #068b4b;
+    box-shadow: 0 0 0 0.25rem rgba(6, 139, 75, 0.5)
+  }
+
+  html.green-theme .btn-check:checked + .btn-theme, html.green-theme .btn-check:active + .btn-theme, html.green-theme .btn-theme:active, html.green-theme .btn-theme.active, .show > .btn-theme.dropdown-toggle {
+    
+    background-color: #068b4b;
+    border-color: #068b4b;
+  }
+
+  html.green-theme .btn-check:checked + .btn-theme:focus, html.green-theme .btn-check:active + .btn-theme:focus, html.green-theme .btn-theme:active:focus, html.green-theme .btn-theme.active:focus, .show > .btn-theme.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgba(6, 139, 75, 0.5)
+  }
+
+  html.green-theme .btn-theme:disabled, html.green-theme .btn-theme.disabled {
+    background-color: #09a257;
+    border-color: #09a257;
+  }
+
+    
+  html.green-theme .back-to-top {   
+    background-color: #09a257;
+  }
+
+
+@media all and (min-width: 1200px) { 
+
+html.green-theme .top-header .primary-menu .navbar-nav a.nav-link:hover,
+html.green-theme .top-header .primary-menu .navbar-nav a.nav-link:focus,
+html.green-theme .top-header .primary-menu .nav-link.active,
+html.green-theme .top-header .primary-menu .show>.nav-link {
+  background-color: #068b4b;
+}
+
+}
+
+
+
+
+/* Black Theme */
+
+html.black-theme .top-header {
+
+  background-color: #212529;
+
+}
+
+html.black-theme .top-header .primary-menu .navbar-nav a.nav-link:hover,
+html.black-theme .top-header .primary-menu .navbar-nav a.nav-link:focus,
+html.black-theme .top-header .primary-menu .nav-link.active,
+html.black-theme .top-header .primary-menu .show>.nav-link {
+background-color: #212529;
+}
+
+html.black-theme .top-header .primary-menu .dropdown-menu .dropdown-item.active, html.blue-theme .top-header .primary-menu .dropdown-menu .dropdown-item:active {
+
+background-color: #212529
+}
+
+
+html.black-theme .vedio-share .social-link a:hover {
+ 
+  background-color: #212529;
+}
+
+html.black-theme .footer-section .widget-link li a:hover {
+  color: #212529;
+}
+
+html.black-theme .footer-widget-9 .social-link a:hover {
+  
+  background-color: #212529;
+}
+
+
+html.black-theme .buzz-categories .buzz-menu .list-group-item.active{
+background-color: #212529;
+border-color: #212529;
+}
+
+
+html.black-theme .bg-theme {
+  background-color: #212529 !important;
+}
+
+html.black-theme .text-theme {
+  color: #212529;
+}
+
+html.black-theme .btn-theme {
+  background-color: #212529;
+  border-color: #212529;
+}
+
+html.black-theme .btn-theme:hover {
+ 
+  background-color: #181b1f;
+  border-color: #181b1f;
+}
+
+html.black-theme .btn-check:focus + .btn-theme, html.black-theme .btn-theme:focus {
+  
+  background-color: #181b1f;
+  border-color: #181b1f;
+  box-shadow: 0 0 0 0.25rem rgba(24, 27, 31, 0.5)
+}
+
+html.black-theme .btn-check:checked + .btn-theme, html.black-theme .btn-check:active + .btn-theme, html.black-theme .btn-theme:active, html.black-theme .btn-theme.active, .show > .btn-theme.dropdown-toggle {
+  
+  background-color: #181b1f;
+  border-color: #181b1f;
+}
+
+html.black-theme .btn-check:checked + .btn-theme:focus, html.black-theme .btn-check:active + .btn-theme:focus, html.black-theme .btn-theme:active:focus, html.black-theme .btn-theme.active:focus, .show > .btn-theme.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(24, 27, 31, 0.5)
+}
+
+html.black-theme .btn-theme:disabled, html.black-theme .btn-theme.disabled {
+  background-color: #181b1f;
+  border-color: #181b1f;
+}
+
+html.black-theme .back-to-top {   
+  background-color: #181b1f;
+}
+
+@media all and (min-width: 1200px) { 
+
+html.black-theme .top-header .primary-menu .navbar-nav a.nav-link:hover,
+html.black-theme .top-header .primary-menu .navbar-nav a.nav-link:focus,
+html.black-theme .top-header .primary-menu .nav-link.active,
+html.black-theme .top-header .primary-menu .show>.nav-link {
+
+  background-color: #181b1f;
+
+}
+
+}

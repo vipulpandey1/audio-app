@@ -15,8 +15,9 @@ class IsAdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        
 
-        if(Auth::guard('user')->check() ){
+        if(Auth::guard('user')->check() && Auth::guard('user')->user()->role_id==1){
             return $next($request);
         }else{
             return redirect()->route('login');
