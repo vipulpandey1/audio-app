@@ -19,7 +19,9 @@
                     <tr>
                       <th >#</th>
                       <th>Title</th>
-
+                      <th>Link</th>
+                       <th>Image</th>
+                      <th>Mobile Image</th>
                       <th >Action</th>
                     </tr>
                   </thead>
@@ -28,6 +30,26 @@
                     <tr>
                       <td>{{ $key + 1}}</td>
                       <td>{{ $slider->title }}</td>
+                      <td>{{ $slider->link }}</td>
+                      <td>
+                        @if(isset($slider->category_id))
+                          <img style="width: 5rem;" src="{{ asset('uploads/slider/category/'.$slider->category_id.'/'.$slider->image) }}" class="rounded img-fluid  d-block" alt="">
+                          @else
+
+                          <img style="width: 5rem;" src="{{ asset('uploads/slider/'.$slider->image) }}" class="rounded img-fluid  d-block" alt="">
+
+                          @endif
+                      </td>
+                       <td>
+                        @if(isset($slider->category_id))
+                          <img style="width: 5rem;" src="{{ asset('uploads/slider/category/mobile/'.$slider->category_id.'/'.$slider->mobile_image) }}" class="rounded img-fluid  d-block" alt="">
+                          @else
+
+                          <img style="width: 5rem;" src="{{ asset('uploads/slider/mobile/'.$slider->mobile_image) }}" class="rounded img-fluid  d-block" alt="">
+
+                          @endif
+                      </td>
+
 
                       <td>
                         <a href="{{ route('removeSlider',$slider->id) }}" class="btn btn-danger" title="Delete">Delete</a>
@@ -69,6 +91,11 @@
                         <label for="exampleInputPassword1">Title</label>
                         <input type="text" name="title" class="form-control" id="title" placeholder="Enter Title">
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Link</label>
+                        <input type="text" name="link" class="form-control" id="title" placeholder="Enter Link">
+                    </div>
 
                     <div class="form-group">
                         <label for="exampleInputPassword1">Type</label>
@@ -103,6 +130,19 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                      <label for="file_mobile">Mobile Image</label>
+                      <div class="input-group">
+                          <div class="custom-file">
+                          <input type="file" class="custom-file-input" name="mobile_image" id="file_mobile">
+                          <label class="custom-file-label" for="file">Choose file</label>
+                          </div>
+                          <div class="input-group-append">
+                          <span class="input-group-text">Upload</span>
+                          </div>
+                      </div>
+                  </div>
+                    
 
                 </div>
                 <div class="modal-footer">

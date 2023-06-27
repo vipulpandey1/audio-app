@@ -13,15 +13,14 @@
 "></script>
 
 </head>
-<body>
-      <div class="container" >
-        <div class="row m-5 no-gutters shadow-lg " >
-          <div class="col-md-6 d-none d-md-block">
-            <img src="{{ asset('assets/main.jpeg') }}" class="img-fluid" style="min-height:100%;" />
-          </div>
-        <div class="col-md-6 bg-white p-5">
-          <h3 class="pb-3 text-center">Suno Kahaniya</h3>
-          <div class="form-style">
+<body style="background-image: url({{ asset('assets/side.png') }}); max-height: 525px;">
+      <div class="containers" >
+        <div class="row no-gutters shadow-lg " style="height:100%;" >
+         
+        <div class="p-5" style="width:100%;display:flex;justify-content:center;flex-wrap:wrap;">
+          
+          <div class="form-style" style="width:100%;max-width:500px;background:rgba(255,255,255,0.5);padding:5rem;margin-top:5rem;">
+          <h3 class="pb-3 text-center" style="width:100%">Suno Kahaniya</h3>
               <form method="post" action="{{ route('loginUser') }}">
                 @csrf
                   <div class="form-group pb-3">    

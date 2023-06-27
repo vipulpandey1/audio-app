@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'fb_id',
+        'google_id'
     ];
 
     /**
@@ -45,6 +47,11 @@ class User extends Authenticatable
     public function roles(){
         return $this->belongsTo(Role::class,'role_id');
     }
+    
+    public function recent(){
+        return $this->hasMany(RecentSave::class,'user_id');
+    }
+
 
     public function userProfile(){
         return $this->hasOne(UserProfile::class);
